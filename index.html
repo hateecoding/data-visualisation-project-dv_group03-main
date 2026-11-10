@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fatal Blind Spot</title>
+  <meta name="description" content="Safety enforcement feelings: stories and signals.">
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="image/Favicon.ico">
+  <link rel="shortcut icon" type="image/jpeg" href="image/Favicon.ico">
+  <link rel="apple-touch-icon" href="image/Favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
+  <!-- Slider CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- D3.js for data visualization -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- TopoJSON library for geographic data -->
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <!-- Three.js for 3D background effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <!-- Vanta.js for animated backgrounds -->
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+  <!-- Slider JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+</head>
+<body>
+
+  <!-- Mobile Desktop Suggestion Banner -->
+  <div class="mobile-banner" id="mobile-banner">
+    <div class="mobile-banner-content">
+      <span class="mobile-banner-icon">💻</span>
+      <span class="mobile-banner-text">For the best experience, please view this site on a desktop device</span>
+      <button class="mobile-banner-close" id="mobile-banner-close" aria-label="Close banner">
+        <span>✕</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-container">
+      <a href="#main" class="nav-logo">Fatal Blind Spot</a>
+      <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#chart1" class="nav-link">Regional Data</a></li>
+        <li><a href="#chart2" class="nav-link">Demographics</a></li>
+        <li><a href="#chart3" class="nav-link">Road User</a></li>
+        <li><a href="#chart4" class="nav-link">Enforcement</a></li>
+        <li><a href="#chart5" class="nav-link">Crash Timing</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main" class="site-main" role="main">
+    <section class="hero">
+      <div class="wrap">
+        <h1>The Fatal Blind Spot</h1>
+        <div class="hero-message">
+          <div class="message-container">
+            <div class="animated-text">
+              <span class="text-segment" data-step="1">Understanding the context,</span>
+              <span class="text-segment" data-step="2">identifying the victims,</span>
+              <span class="text-segment" data-step="3">evaluating policy,</span>
+              <span class="text-segment" data-step="4">and directing action</span>
+            </div>
+            <div class="conclusion-text">
+              <span class="dash">—</span>
+              <span class="final-message">this is how data transforms enforcement from reactive punishment into life-saving strategy.</span>
+            </div>
+          </div>
+          <div class="progress-indicators">
+            <div class="indicator" data-step="1"></div>
+            <div class="indicator" data-step="2"></div>
+            <div class="indicator" data-step="3"></div>
+            <div class="indicator" data-step="4"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chart 1 with Story -->
+    <section id="chart1" class="chart-section split-layout">
+      <div class="wrap">
+        <h2>Regional Data - Road Fatalities in Australia</h2>
+        
+        <div class="split-container">
+          <!-- Year Filter moved inside split container, above chart -->
+          <!-- Left side: Story -->
+          <div class="story-left">
+            <h3>WHERE is the biggest crisis?</h3>
+            <p><strong>The chart immediately shows the State with the highest absolute fatality count, establishing the primary geographical and political focus for the entire study.</strong></p>
+            
+            <div id="chart1-story-content">
+              <p>From <strong>2020-2024</strong>, the states with the most severe road safety challenges show the highest fatality rates per 100,000 population:</p>
+              <ul id="chart1-highest-states">
+                <li>Loading...</li>
+              </ul>
+              <p>Meanwhile, the safest states demonstrate significantly lower fatality rates:</p>
+              <ul id="chart1-lowest-states">
+                <li>Loading...</li>
+              </ul>
+            </div>
+            
+            <p class="data-source"><strong>Data Sources:</strong> <a href="https://catalogue.data.infrastructure.gov.au/dataset/australian-road-deaths-database" target="_blank" rel="noopener noreferrer">Australian Road Deaths Database (ARDD)</a> and <a href="https://www.abs.gov.au/statistics/people/population/national-state-and-territory-population/latest-release#data-downloads" target="_blank" rel="noopener noreferrer">Australian Bureau of Statistics - National, state and territory population</a></p>
+          </div>
+          
+          <!-- Right side: Chart -->
+          <div class="chart-right">
+            <!-- Year Filter Slider -->
+            <div class="chart1-year-filter-container">
+              <div id="chart1-year-slider" class="chart1-year-slider"></div>
+            </div>
+            
+            <div id="chart1-container" class="chart-container">
+              <!-- D3.js globe will be rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- Chart 2 -->
+    <section id="chart2" class="chart-section split-layout">
+      <div class="wrap">
+        <h2>Demographics - Road Fatalities by Year, Age Group & Jurisdiction</h2>
+        
+        <div class="split-container">
+          <!-- Left side: Story -->
+          <div class="story-left">
+            <h3>WHO is at risk, segmented by age and year?</h3>
+            <p><strong>The nested structure (Year → Age Group → Jurisdiction) reveals which Age Groups have the highest fatality rates and if this risk is persistent over time or concentrated in a particular jurisdiction.</strong></p>
+            
+            <div id="chart2-dynamic-insights">
+              <p><strong>Structure:</strong><br>
+              • Inner ring: Years (2020-2024)<br>
+              • Middle ring: Age groups<br>
+              • Outer ring: Jurisdictions</p>
+              
+              <p><strong>How to Use:</strong> Hover over any segment to see a tooltip with details. Click any segment to zoom in and explore. Click the center circle to zoom back out and return to the full view.</p>
+            </div>
+            
+            <p class="data-source"><strong>Data Source:</strong> <a href="https://catalogue.data.infrastructure.gov.au/dataset/australian-road-deaths-database" target="_blank" rel="noopener noreferrer">Australian Road Deaths Database (ARDD)</a></p>
+          </div>
+          
+          <!-- Right side: Chart -->
+          <div class="chart-right">
+            <div id="chart2-container" class="chart-container">
+              <!-- D3.js sunburst chart will be rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Chart 3 -->
+    <section id="chart3" class="chart-section split-layout">
+      <div class="wrap">
+        <h2>Road User Type and Gender</h2>
+        
+        <!-- Year Filter -->
+        <div class="chart3-year-filter-container">
+          <div class="filter-group">
+            <div class="filter-header collapsible-header" data-filter="chart3-year">
+              <label class="filter-label">Filter by Year <span class="toggle-icon">▼</span></label>
+            </div>
+            <div id="chart3-year-filter" class="checkbox-filter-container collapsed">
+              <!-- Checkboxes will be populated dynamically -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="split-container">
+          <!-- Left side: Story -->
+          <div class="story-left">
+            <h3>WHO is most at risk by road role?</h3>
+            <p><strong>By visualizing crash ages/fatalities across different Road Users (Driver, Pedestrian, Motorcyclist), the chart reveals which specific roles carry the highest and most broadly distributed fatality risk.</strong></p>
+            
+            <div id="chart3-story-content">
+              <p id="chart3-year-range">From <strong>2020-2024</strong>, the data reveals significant gender disparities:</p>
+              <ul id="chart3-insights">
+                <li>Loading...</li>
+              </ul>
+            </div>
+            
+            <p><strong>Chart Guide:</strong> The violin chart displays distributions split by gender - blue for male, red for female. Each violin's width shows the data distribution.</p>
+            
+            <p><strong>How to Use:</strong> Hover over any violin to see a tooltip with exact fatality counts by gender. Click a violin to highlight that road user type. To zoom, click and drag vertically to select a range. Double-click to reset the zoom.</p>
+            
+            <p class="data-source"><strong>Data Source:</strong> <a href="https://catalogue.data.infrastructure.gov.au/dataset/australian-road-deaths-database" target="_blank" rel="noopener noreferrer">Australian Road Deaths Database (ARDD)</a></p>
+          </div>
+          
+          <!-- Right side: Chart -->
+          <div class="chart-right">
+            <div id="chart3-container" class="chart-container">
+              <!-- D3.js chart will be rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Chart 4 -->
+    <section id="chart4" class="chart-section split-layout">
+      <div class="wrap">
+        <h2>Enforcement vs Fatality Distribution</h2>
+        
+        <!-- Year Filter -->
+        <div class="chart4-year-filter-container">
+          <div class="filter-group">
+            <div class="filter-header collapsible-header" data-filter="chart4-year">
+              <label class="filter-label">Filter by Year <span class="toggle-icon">▼</span></label>
+            </div>
+            <div id="chart4-year-filter" class="checkbox-filter-container collapsed">
+              <!-- Checkboxes will be populated dynamically -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="split-container">
+          <!-- Left side: Story -->
+          <div class="story-left">
+            <h3>Is our enforcement working?</h3>
+            <p><strong>The chart visually links Enforcement Input (Fines/Charges) to Fatality Output (Crashes) across States. The flow reveals the misalignment identifying jurisdictions where high crash rates are not met with proportionally high enforcement effort, thus revealing the policy gap.</strong></p>
+            
+            <div id="chart4-story-content">
+              <p><strong>Key Insights:</strong></p>
+              <ul id="chart4-insights">
+                <li>Loading...</li>
+              </ul>
+            </div>
+            
+            <p><strong>Chart Guide:</strong> Flow from enforcement (left) through states (middle) to fatalities (right). Thickness = percentage share.</p>
+            
+            <p><strong>How to Use:</strong> Hover for percentages and highlight.</p>
+            
+            <p class="data-source"><strong>Data Sources:</strong> <a href="https://catalogue.data.infrastructure.gov.au/dataset/australian-road-deaths-database" target="_blank" rel="noopener noreferrer">Australian Road Deaths Database (ARDD)</a> and <a href="http://catalogue.data.infrastructure.gov.au/dataset/road-safety-enforcement-data" target="_blank" rel="noopener noreferrer">Road Safety Enforcement Data</a></p>
+          </div>
+          
+          <!-- Right side: Chart -->
+          <div class="chart-right">
+            <div id="chart4-container" class="chart-container">
+              <!-- D3.js chart will be rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+    <!-- Chart 5 - Multi-Donut -->
+    <section id="chart5" class="chart-section split-layout">
+      <div class="wrap">
+        <h2>Crash Timing - When and Where Crashes Peak</h2>
+        
+        <div class="split-container">
+          <!-- Left side: Story -->
+          <div class="story-left">
+            <!-- Additional Filters -->
+            <div class="chart5-filters-container">
+              <div class="filter-group">
+                <div class="filter-header collapsible-header" data-filter="day">
+                  <label class="filter-label">Filter by Day <span class="toggle-icon">▼</span></label>
+                </div>
+                <div id="chart5-day-filter" class="checkbox-filter-container collapsed">
+                  <!-- Checkboxes will be populated dynamically -->
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <div class="filter-header collapsible-header" data-filter="roadtype">
+                  <label class="filter-label">Filter by Road Type <span class="toggle-icon">▼</span></label>
+                </div>
+                <div id="chart5-roadtype-filter" class="checkbox-filter-container collapsed">
+                  <!-- Checkboxes will be populated dynamically -->
+                </div>
+              </div>
+              
+              <div class="filter-group">
+                <div class="filter-header collapsible-header" data-filter="age">
+                  <label class="filter-label">Filter by Age <span class="toggle-icon">▼</span></label>
+                </div>
+                <div id="chart5-age-filter" class="checkbox-filter-container collapsed">
+                  <!-- Checkboxes will be populated dynamically -->
+                </div>
+              </div>
+            </div>
+            
+            <h3>WHEN and WHERE do we act?</h3>
+            <p><strong>Focusing on the highest-risk State (from Chart 1 and 4), this chart pinpoints the precise Month/Day and Road Type where fatalities cluster. This provides the final, actionable intelligence required to deploy resources at the optimal time and location.</strong></p>
+            
+            <p><strong>Key Insights:</strong></p>
+            <p>• <strong>Morning Rush (6-9 AM):</strong> High risk on Highways during commute<br>
+            • <strong>Evening Rush (15-21):</strong> Highest fatality periods on Arterial Roads<br>
+            • <strong>Late Night (21-3):</strong> Significant risk on Local Roads<br>
+            • <strong>Weekends:</strong> Outer rings show more late-night incidents</p>
+            
+            <p><strong>Chart Guide:</strong> 7 rings (Monday inner, Sunday outer) × 8 time periods. Darker red = higher fatalities.</p>
+            
+            <p><strong>How to Use:</strong>Use year slider to filter. Click filters to expand options. Hover cells for details.</p>
+            
+            <p class="data-source"><strong>Data Source:</strong> <a href="https://catalogue.data.infrastructure.gov.au/dataset/australian-road-deaths-database" target="_blank" rel="noopener noreferrer">Australian Road Deaths Database (ARDD)</a></p>
+          </div>
+          
+          <!-- Right side: Chart -->
+          <div class="chart-right">
+            <!-- Year Filter Slider -->
+            <div class="chart5-year-filter-container">
+              <div id="chart5-year-slider" class="chart5-year-slider"></div>
+            </div>
+            
+            <div id="chart5-container" class="chart-container">
+              <!-- D3.js chart will be rendered here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!--This is Home Page: Vanta.js Birds Background Initialization -->
+  <script>
+    // Initialize Vanta.js Birds effect on hero section
+    if (window.VANTA) {
+      window.VANTA.BIRDS({
+        el: ".hero",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        backgroundColor: 0xffffff,
+        quantity: 4.00
+      });
+    }
+
+    // Hero message animation controller
+    document.addEventListener('DOMContentLoaded', function() {
+      const indicators = document.querySelectorAll('.indicator');
+      const textSegments = document.querySelectorAll('.text-segment');
+      
+      // Animation timeline
+      const timeline = [
+        { delay: 500, step: 1 },   // Understanding the context
+        { delay: 1200, step: 2 },  // identifying the victims
+        { delay: 1900, step: 3 },  // evaluating policy
+        { delay: 2600, step: 4 }   // and directing action
+      ];
+      
+      // Activate indicators in sequence
+      timeline.forEach(({ delay, step }) => {
+        setTimeout(() => {
+          const indicator = document.querySelector(`.indicator[data-step="${step}"]`);
+          if (indicator) {
+            indicator.classList.add('active');
+          }
+        }, delay);
+      });
+      
+      // Add hover effects for interactive engagement
+      textSegments.forEach(segment => {
+        segment.addEventListener('mouseenter', function() {
+          const step = this.getAttribute('data-step');
+          const indicator = document.querySelector(`.indicator[data-step="${step}"]`);
+          if (indicator) {
+            indicator.style.transform = 'scale(1.2)';
+            indicator.style.boxShadow = '0 0 15px rgba(37, 99, 235, 0.5)';
+          }
+        });
+        
+        segment.addEventListener('mouseleave', function() {
+          const step = this.getAttribute('data-step');
+          const indicator = document.querySelector(`.indicator[data-step="${step}"]`);
+          if (indicator) {
+            indicator.style.transform = 'scale(1)';
+            indicator.style.boxShadow = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Main application script as ES module -->
+  <script type="module" src="js/main.js"></script>
+  <script
+    src="https://static.getwcag.com/widget.js"
+    config-url="https://static.getwcag.com/configs/G3IZclU4nZTmRdhWc2Om/config.json"
+    use-important="false"
+  ></script>
+</body>
+</html>

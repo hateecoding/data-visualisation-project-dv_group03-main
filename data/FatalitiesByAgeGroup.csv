@@ -1,0 +1,203 @@
+"Year","State","Age","Count*(Crash ID)"
+2020,"Australian Capital Territory","0-16",1
+2020,"Australian Capital Territory","17-25",1
+2020,"Australian Capital Territory","26-39",2
+2020,"Australian Capital Territory","40-64",1
+2020,"Australian Capital Territory","65 and over",1
+2020,"New South Wales","0-16",15
+2020,"New South Wales","17-25",53
+2020,"New South Wales","26-39",76
+2020,"New South Wales","40-64",80
+2020,"New South Wales","65 and over",60
+2020,"Northern Territory","0-16",2
+2020,"Northern Territory","17-25",10
+2020,"Northern Territory","26-39",9
+2020,"Northern Territory","40-64",7
+2020,"Northern Territory","65 and over",3
+2020,"Queensland","0-16",15
+2020,"Queensland","17-25",53
+2020,"Queensland","26-39",74
+2020,"Queensland","40-64",87
+2020,"Queensland","65 and over",49
+2020,"South Australia","0-16",4
+2020,"South Australia","17-25",23
+2020,"South Australia","26-39",24
+2020,"South Australia","40-64",21
+2020,"South Australia","65 and over",21
+2020,"Tasmania","0-16",3
+2020,"Tasmania","17-25",4
+2020,"Tasmania","26-39",7
+2020,"Tasmania","40-64",18
+2020,"Tasmania","65 and over",6
+2020,"Victoria","0-16",7
+2020,"Victoria","17-25",32
+2020,"Victoria","26-39",60
+2020,"Victoria","40-64",64
+2020,"Victoria","65 and over",43
+2020,"Victoria","Unknown",4
+2020,"Western Australia","0-16",8
+2020,"Western Australia","17-25",31
+2020,"Western Australia","26-39",38
+2020,"Western Australia","40-64",50
+2020,"Western Australia","65 and over",24
+2021,"Australian Capital Territory","17-25",3
+2021,"Australian Capital Territory","26-39",1
+2021,"Australian Capital Territory","40-64",2
+2021,"Australian Capital Territory","65 and over",3
+2021,"New South Wales","0-16",17
+2021,"New South Wales","17-25",53
+2021,"New South Wales","26-39",47
+2021,"New South Wales","40-64",88
+2021,"New South Wales","65 and over",70
+2021,"Northern Territory","0-16",3
+2021,"Northern Territory","17-25",1
+2021,"Northern Territory","26-39",14
+2021,"Northern Territory","40-64",15
+2021,"Northern Territory","65 and over",2
+2021,"Queensland","0-16",14
+2021,"Queensland","17-25",53
+2021,"Queensland","26-39",81
+2021,"Queensland","40-64",82
+2021,"Queensland","65 and over",46
+2021,"Queensland","Unknown",1
+2021,"South Australia","0-16",4
+2021,"South Australia","17-25",21
+2021,"South Australia","26-39",14
+2021,"South Australia","40-64",34
+2021,"South Australia","65 and over",26
+2021,"Tasmania","0-16",2
+2021,"Tasmania","17-25",7
+2021,"Tasmania","26-39",6
+2021,"Tasmania","40-64",11
+2021,"Tasmania","65 and over",9
+2021,"Victoria","0-16",13
+2021,"Victoria","17-25",36
+2021,"Victoria","26-39",48
+2021,"Victoria","40-64",66
+2021,"Victoria","65 and over",61
+2021,"Victoria","Unknown",3
+2021,"Western Australia","0-16",10
+2021,"Western Australia","17-25",35
+2021,"Western Australia","26-39",31
+2021,"Western Australia","40-64",51
+2021,"Western Australia","65 and over",31
+2021,"Western Australia","Unknown",1
+2022,"Australian Capital Territory","0-16",2
+2022,"Australian Capital Territory","17-25",6
+2022,"Australian Capital Territory","26-39",4
+2022,"Australian Capital Territory","40-64",5
+2022,"New South Wales","0-16",19
+2022,"New South Wales","17-25",52
+2022,"New South Wales","26-39",45
+2022,"New South Wales","40-64",81
+2022,"New South Wales","65 and over",84
+2022,"Northern Territory","0-16",5
+2022,"Northern Territory","17-25",14
+2022,"Northern Territory","26-39",14
+2022,"Northern Territory","40-64",13
+2022,"Northern Territory","65 and over",6
+2022,"Queensland","0-16",18
+2022,"Queensland","17-25",57
+2022,"Queensland","26-39",77
+2022,"Queensland","40-64",89
+2022,"Queensland","65 and over",54
+2022,"South Australia","0-16",2
+2022,"South Australia","17-25",19
+2022,"South Australia","26-39",12
+2022,"South Australia","40-64",24
+2022,"South Australia","65 and over",14
+2022,"Tasmania","0-16",4
+2022,"Tasmania","17-25",8
+2022,"Tasmania","26-39",13
+2022,"Tasmania","40-64",12
+2022,"Tasmania","65 and over",13
+2022,"Victoria","0-16",7
+2022,"Victoria","17-25",40
+2022,"Victoria","26-39",55
+2022,"Victoria","40-64",80
+2022,"Victoria","65 and over",55
+2022,"Victoria","Unknown",1
+2022,"Western Australia","0-16",8
+2022,"Western Australia","17-25",30
+2022,"Western Australia","26-39",46
+2022,"Western Australia","40-64",61
+2022,"Western Australia","65 and over",29
+2023,"Australian Capital Territory","17-25",2
+2023,"Australian Capital Territory","26-39",1
+2023,"Australian Capital Territory","40-64",1
+2023,"New South Wales","0-16",26
+2023,"New South Wales","17-25",68
+2023,"New South Wales","26-39",66
+2023,"New South Wales","40-64",98
+2023,"New South Wales","65 and over",82
+2023,"Northern Territory","0-16",5
+2023,"Northern Territory","17-25",7
+2023,"Northern Territory","26-39",7
+2023,"Northern Territory","40-64",11
+2023,"Northern Territory","65 and over",1
+2023,"Queensland","0-16",7
+2023,"Queensland","17-25",63
+2023,"Queensland","26-39",62
+2023,"Queensland","40-64",85
+2023,"Queensland","65 and over",57
+2023,"South Australia","0-16",1
+2023,"South Australia","17-25",16
+2023,"South Australia","26-39",26
+2023,"South Australia","40-64",41
+2023,"South Australia","65 and over",33
+2023,"Tasmania","0-16",2
+2023,"Tasmania","17-25",2
+2023,"Tasmania","26-39",11
+2023,"Tasmania","40-64",9
+2023,"Tasmania","65 and over",8
+2023,"Victoria","0-16",15
+2023,"Victoria","17-25",53
+2023,"Victoria","26-39",73
+2023,"Victoria","40-64",74
+2023,"Victoria","65 and over",73
+2023,"Victoria","Unknown",1
+2023,"Western Australia","0-16",5
+2023,"Western Australia","17-25",28
+2023,"Western Australia","26-39",34
+2023,"Western Australia","40-64",56
+2023,"Western Australia","65 and over",34
+2024,"Australian Capital Territory","0-16",1
+2024,"Australian Capital Territory","17-25",1
+2024,"Australian Capital Territory","26-39",4
+2024,"Australian Capital Territory","40-64",2
+2024,"New South Wales","0-16",15
+2024,"New South Wales","17-25",71
+2024,"New South Wales","26-39",67
+2024,"New South Wales","40-64",98
+2024,"New South Wales","65 and over",76
+2024,"Northern Territory","0-16",2
+2024,"Northern Territory","17-25",14
+2024,"Northern Territory","26-39",12
+2024,"Northern Territory","40-64",25
+2024,"Northern Territory","65 and over",7
+2024,"Queensland","0-16",13
+2024,"Queensland","17-25",49
+2024,"Queensland","26-39",79
+2024,"Queensland","40-64",90
+2024,"Queensland","65 and over",69
+2024,"Queensland","Unknown",2
+2024,"South Australia","0-16",3
+2024,"South Australia","17-25",12
+2024,"South Australia","26-39",10
+2024,"South Australia","40-64",30
+2024,"South Australia","65 and over",34
+2024,"Tasmania","0-16",3
+2024,"Tasmania","17-25",6
+2024,"Tasmania","26-39",5
+2024,"Tasmania","40-64",10
+2024,"Tasmania","65 and over",7
+2024,"Victoria","0-16",14
+2024,"Victoria","17-25",52
+2024,"Victoria","26-39",56
+2024,"Victoria","40-64",85
+2024,"Victoria","65 and over",68
+2024,"Western Australia","0-16",11
+2024,"Western Australia","17-25",34
+2024,"Western Australia","26-39",42
+2024,"Western Australia","40-64",58
+2024,"Western Australia","65 and over",42
